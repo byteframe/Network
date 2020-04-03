@@ -1,0 +1,57 @@
+WRT54Gv2 Tomato 1.28 WPA Main
+================================================================================
+PPPOE Keep Alive 16s Check, MTU 1492, LAN 192.168.4.1, DHCP 110-120, 1440m lease
+WiFi-G AP, Channel 4, Broadcast SSID primarydataloop, WPA/WPA2 Personal+TKIP/AES
+Name tomato, Hostname tomato, Domain Name primarydataloop
+None, was dyndns.com host primarydataloop.dyndns.org, byteframe/&, 4 day update
+
+00:24:8C:XX:XX:XX - 100 (icarus) "icarus"
+00:04:4B:XX:XX:XX - 101 (euclid) "euclid"
+00:0E:35:XX:XX:XX - 102 (archimedes wifi) "archimedes"
+00:1F:16:XX:XX:XX - 103 (pythagoras) "pythagoras"
+00:1E:37:XX:XX:XX - 104 (fibonacci) "fibonacci"
+68:A3:C4:XX:XX:XX - 105 (newton wifi) "newton"
+60:A4:4C:XX:XX:XX - 106 (inquisitorsect wifi) "inquisitorsect"
+00:1F:33:XX:XX:XX - 107 (netgear wifi)
+00:23:31:XX:XX:XX - 108 (wii wifi)
+50:E5:49:XX:XX:XX - 109 (emmafleadesktop)
+20:16:D8:XX:XX:XX - 110 (fleabag wifi)
+E4:25:E7:XX:XX:XX - XXX (xiphoneforlifex)
+
+No ICMP Respond, Disallow Multicast, Forward-Only NAT Loopback, No SYN Cookies
+Transmit/TX Power 78mW
+
+_|101|T|-|22            |-|ssh
+_|104|T|-|80,443        |-|http,https
+_|104|T|-|8080          |-|httpalt
+X|104|U|-|26901,27015   |-|src,vac
+UPNP on, NAT-PMP on
+
+Prioritize ACK, ICMP, Default Class Medium, Reset When Changing Settings
+750 Outbound, 7500 Inbound
+Highest: 10%, 50%-80% (A)
+   High: 70%, 30%-60% (B)
+ Medium: 20%, 10%-15%
+A| |  2k|D=53                                       |   |dns
+A|U|    |3074-6,77(07-08,57-58,77-78),26901,27000-30|   |x,kf,ro,u,vac,src
+B| |    |                                           |0-7|(primarydataloop)
+C| |    |                                           |11>|(limit)
+B| |    |20-21                                      |   |ftp
+B| |    |D=80,443,554,1935,9418                     |   |http,https,rtsp,fcs,git
+
+Admin Access HTTPS 4443, No Remote, Allow Wireless, Bandwidth, QOS, Admin Open
+Bandwith Monitoring On, Save to CIFS1 every 2 hours and on shutdown
+SSH off,Telnet off
+CIFS1 \\192.168.4.101\Network user simba
+JFFS2 off
+Syslog off
+Scheduler Custom 1 @ Disabled
+  'nvram set qos_enable=0'
+  'service qos stop'
+Scheduler Custom 2 @ Disabled
+  'nvram set qos_enable=1'
+  'service qos start'
+Scheduler Custom 3 @ Every 30 Minutes
+  `ifconfig vlan1:0 192.168.1.2 netmask 255.255.255.0`
+  `iptables -t nat -I POSTROUTING -o vlan1 -j MASQUERADE`
+No Scripts

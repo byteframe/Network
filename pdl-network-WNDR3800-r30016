@@ -1,0 +1,64 @@
+Netgear WNDR3800 DDWRT 3.0-r300016 std WPA Main
+================================================================================
+DHCP WAN, Host/Name: samba, Domain: primarydataloop, MTU 1500
+br0 192.168.4.1/255.255.255.0, DHCP 101-151@1440m (50 max), DNSMasq for DCHP/DNS
+NTP enabled
+IPV6 Support disabled
+DyDns1 = ChangeIP: primarydataloop/&@primarydataloop.ns01.us 10+
+MAC Address Clone+Advanced Routing/Networking+EoIP Tunnel disabled
+
+WiFi-G/N AP, Chan Auto @Full20MH Unhidden "primarydataloop-24", WPA2p+AES, TX=26
+WiFi-A/N AP, Chan Auto @WideHT40 Unhidden "primarydataloop-50", WPA2p+AES, TX=26
+SuperChannel+MAC Filter+WDS disabled
+
+77:24:AF:XX:XX:XX - 101 (euclid)                        <??:??:??:??:??:?? wlan>
+8C:A9:82:XX:XX:XX - 102 (newton)                        <F0:DE:F1:XX:XX:XX eth0>
+DNSMasq+No Rebind+Strict order enabled, Local DNS+Requestor disabled
+DNS Tunnelling+PPPoE Relay/SES Button/RFlow/SNMP disabled
+SSH @ Port 22 Password with rsa key (byteframe@euclid)
+Syslog+Telnet disabled
+WAN Traffic Counter enabled
+VNC Repeater+FreeRadius+PPPoE+VPN disabled
+USB 2.0 Automount enabled, Printer disabled, Use SES Button
+ProFTP+MiniDLNA disabled
+Samba enabled "simba/primarydataloop" for /mnt/sda1/Video(p_ro)+Datavault(u_rw)
+Transmission+Hotspot+SIP Proxy+WebServer disabled
+
+SPI enabled, No Filters, Block WAN+Multicast+Nat+Ident+Snmp, No DoS/Warning/Log
+
+No Access Restrictions
+
+No Port Forwarding/Range/Triggering
+UPNP enabled
+DMZ+QOS disabled
+
+Local Admin Access HTTPS with Info Site and Mac Masking
+Remote SSH Access enabled on port 2222 for any IP
+Boot Wait+Cron+802.1x+Reset Button+Routing enabled
+JFFS2 disabled
+TCP Congestion Control westwood, 4096 max ports and 3600/120 timeouts
+Overclocking+CIFS Automount+Keep Alive disabled
+Startup Commands:
+  {
+    echo "while true; do"
+    echo "  grep -q \":100:\" /etc/group || echo \"users:x:100:\" >> /etc/group"
+    echo "  ln -sfn /tmp/mnt/sda1 /mnt/Datavault"
+    echo "  sed -i -e \"s/force user = root/force user = byteframe/\" /tmp/smb.conf"
+    echo "  grep -q \"force group = users\" /tmp/smb.conf || echo \"force group = users\" >> /tmp/smb.conf"
+    echo "  grep -q \"case sensitive = True\" /tmp/smb.conf || echo \"case sensitive = True\" >> /tmp/smb.conf"
+    echo "  grep -q \"default case = lower\" /tmp/smb.conf || echo \"default case = lower\" >> /tmp/smb.conf"
+    echo "  grep -q \"preserve case = yes\" /tmp/smb.conf || echo \"preserve case = yes\" >> /tmp/smb.conf"
+    echo "  grep -q \"short preserve case = yes\" /tmp/smb.conf || echo \"short preserve case = yes\" >> /tmp/smb.conf"
+    echo "  sleep 180"
+    echo "done"
+  } > /tmp/samba.sh
+  sh /tmp/samba.sh &
+WOL disabled
+
+SSH On with MOTD, Forwarding, Passworded @ Port 22, Telnet Off | No TomatoAnon
+Bandwidth Monitor Off | IP Traffic Monitor Off
+CIFS1 disabled / CIFS2 disabled
+SNMP disabled
+Syslog enabled internally, 50kb rotate with 1 hour marker
+Web Monitor disabled
+No Schedules or Scripts

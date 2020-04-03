@@ -1,0 +1,46 @@
+Netgear WNDR3800 DDWRT 3.0-r300016 std WPA Main
+================================================================================
+DHCP WAN, Host/Name: samba, Domain: primarydataloop, MTU 1500
+br0 192.168.4.1/255.255.255.0, DHCP 101-151@1440m (50 max), DNSMasq for DCHP/DNS
+NTP enabled
+IPV6 Support disabled
+DyDns1 = Disabled
+MAC Address Clone+Advanced Routing/Networking+EoIP Tunnel disabled
+
+WiFi-G/N AP, Chan Auto @Full20MH Unhidden "primarydataloop-24", WPA2p+AES, TX=20
+WiFi-A/N AP, Chan Auto @Full20MH Unhidden "primarydataloop-50", WPA2p+AES, TX=20
+SuperChannel+MAC Filter+WDS disabled
+
+DNSMasq+No Rebind+Strict order enabled, Local DNS+Requestor disabled
+DNS Tunnelling+PPPoE Relay/SES Button/RFlow/SNMP disabled
+SSH+Syslog+Telnet disabled
+WAN Traffic Counter enabled
+VNC Repeater+FreeRadius+PPPoE+VPN disabled
+USB disabled, Printer disabled, Use SES Button
+ProFTP+MiniDLNA+Samba disabled
+Transmission+Hotspot+SIP Proxy+WebServer disabled
+
+SPI enabled, No Filters, ARP Spoofing enabled, BlockOnly WAN+Ident+Snmp, No DoS/Warning/Log
+VPN Passthroughs enabled
+
+No Access Restrictions
+
+No Port Forwarding/Range/Triggering
+UPNP enabled
+DMZ+QOS disabled
+
+Local Admin Access HTTP with Info Site and Mac Masking
+Remote SSH Access disabled for any IP
+Boot Wait+Cron+802.1x+Reset Button+Routing enabled
+JFFS2 disabled
+TCP Congestion Control westwood, 4096 max ports and 3600/120 timeouts
+Overclocking+CIFS Automount+Keep Alive disabled
+WOL disabled
+
+SSH Off, Telnet Off
+Bandwidth Monitor On
+CIFS1 disabled / CIFS2 disabled
+SNMP disabled
+Syslog disabled
+Web Monitor disabled
+No Schedules or Scripts

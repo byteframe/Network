@@ -1,0 +1,49 @@
+Netgear WNR3500Lv2 TomatoUSB 1.28 by Shibby 1.32 (K26T-N AIO) WPA Main
+================================================================================
+PPPOE Keep Alive 10s, MTU 1492, br0 192.168.4.1, DHCP 120-130@1440m, Modem Route
+WiFi-G AP, Channel 11 @ 20 MHz, Unhidden SSID primarydataloop, WPA2 Personal+AES
+Host/Name: tomatousb, Domain: primarydataloop
+DyDns1 = ChangeIP: primarydataloop/&@primarydataloop.ns01.us 16+
+DyDns2 = Afraid: ${TOKEN}/primarydataloop.chickenkiller.com
+
+77:24:AF:XX:XX:XX - 101 (euclid)                        <??:??:??:??:??:?? wlan>
+8C:A9:82:XX:XX:XX - 102 (newton)                        <F0:DE:F1:XX:XX:XX eth0>
+00:21:6A:XX:XX:XX - 103 (watts)                         <00:1F:16:XX:XX:XX eth0>
+00:16:D3:XX:XX:XX - 104 (galileo/samba)                 <00:19:7E:XX:XX:XX wlan>
+00:13:CE:XX:XX:XX - 105 (archimedes)                    <00:0A:E4:XX:XX:XX eth0> 48:02:2A:XX:XX:XX/00:0A:E4:XX:XX:XX
+00:1F:D0:XX:XX:XX - 106 (icarus)
+00:1E:37:XX:XX:XX - 107 (fibonacci)
+1C:6F:65:XX:XX:XX - 108 (pythagoras)
+00:21:86:XX:XX:XX - 109 (kepler)
+00:1A:6B:XX:XX:XX - 110 (lovelace)
+
+No ICMP Respond, Disallow Multicast, All NAT Loopback, No SYN Cookies, No DSCP
+
+_|101|T|-|80,443        |-|http,https
+_|101|T|-|8080          |-|httpalt
+_|101|U|-|26901,27015   |-|src,vac
+UPNP on, NAT-PMP on
+No Access Restrictions
+
+Off, Prioritize ACK,SYN,FIN,RST,ICMP, DSL=40PPPoE, Class=Med, Reset, Qdisc=sfq
+850 Outbound, 5400 Inbound
+Highest: 75%-100%, 20%-100% (A)
+   High: 25%-100%, 80%-100% (B)
+A| |  2k|D=53                                       |   |dns
+A|U|    |3074-6,77(07-08,57-58,77-78),26901,27000-30|   |x,kf,ro,u,vac,src
+
+Bandwidth Limiter Disabled
+CaptivePortal Disabled
+WebServer Disabled
+USB 2.0 Automount Disabled, No(Print,NTFS,FAT,HFS,SDMMC,FTP,SMB,DLNA,UPS,HSD,3G)
+Transmission Disabled 400/40 kb @ 'Work/File/T...' with Protected GUI, UTP
+VPN Tunneling Disabled
+
+Admin Access HTTPS 4443, No Remote, Allow Wireless, Status+Bandwidth menus open
+SSH On with MOTD, Forwarding, Passworded @ Port 22, Telnet Off | No TomatoAnon
+Bandwidth Monitor Off | IP Traffic Monitor Off
+CIFS1 Disabled / CIFS2 Disabled
+SNMP Disabled
+Syslog Enabled internally, 50kb rotate with 1 hour marker
+Web Monitor Disabled
+No Schedules or Scripts
